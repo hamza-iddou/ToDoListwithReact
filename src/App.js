@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import SelectUser from "./Components/SelectUser";
+import Task from "./Components/Task";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container align-center ">
+        <h1>Liste Des Todos</h1>
+        <p>15 todo(s)</p>
+        <hr />
+        <SelectUser/>
+        <Task />
+        
+      </div>
+    </>
   );
 }
 
