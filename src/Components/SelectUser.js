@@ -1,21 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-const SelectUser = ({data}) => {
-
-
+const SelectUser = ({ Users }) => {
   return (
     <>
       <p>
         <FontAwesomeIcon icon={faUser} />
         Selectioner un utilisateur
       </p>
-      <select class="form-select" aria-label="Default select example">
-        <option selected value="-1">Tous les utlisateurs</option>
-       
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+      <select className="form-select" aria-label="Default select example">
+        <option value="-1" defaultValue>
+          Tous les utlisateurs
+        </option>
+        {Users.map((user, index) => (
+          <option key={index} value={user}>User {user}</option>
+        ))}
       </select>
     </>
   );
