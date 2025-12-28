@@ -1,71 +1,87 @@
-# Getting Started with Create React App
+📝 Todo List App (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Todo List application built with React.js as part of a homework assignment given by my teacher.
+The main goal of this project is to practice working with APIs using Axios and managing data in React.
 
-## Available Scripts
+🚀 Technologies Used
 
-In the project directory, you can run:
+React.js
 
-### `npm start`
+Axios
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Bootstrap
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+CSS
 
-### `npm test`
+JSON Server (for local backend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📌 Project Features
 
-### `npm run build`
+Fetch todos from a local API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Display todos in a list
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Filter todos by user
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Update todo status (completed / pending)
 
-### `npm run eject`
+Delete todos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+UI updates without page refresh
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🗂 Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The fake backend data is stored in:
+db/src/db.json
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A PDF file explaining the homework requirements is included inside the src folder
+(the document is in French)
 
-## Learn More
+🛠 Setup & Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1️⃣ Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
 
-### Code Splitting
+2️⃣ Install JSON Server (if not installed)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm install -g json-server
 
-### Analyzing the Bundle Size
+3️⃣ Run the JSON Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+From the project root:
 
-### Making a Progressive Web App
+json-server --watch db/src/db.json --port 3001
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4️⃣ Run the React app
 
-### Advanced Configuration
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+The app will run on http://localhost:3000
+The API will run on http://localhost:3001
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+🎯 Purpose of the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# ToDoListwithReact
+This project was created as a homework assignment to learn:
+
+How to consume APIs using Axios
+
+How to manage state in React
+
+How to handle side effects with useEffect
+
+How frontend and backend communicate
+
+🔮 Future Improvements
+
+Add new todos
+
+Edit todo titles
+
+Improve UI/UX
+
+Better error handling
+
+
