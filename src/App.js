@@ -29,14 +29,48 @@ function App() {
     };
 
     fetchTools();
-  }, []);
-  
-  
+  }, [data]);
+
+  const handleDelete = async (id) => {
+    try {
+      setLoading(true);
+      const response = await api.delete(`/todos/${id}`);
+      const todos = response.data;
+      setUserList([...new Set(todos.map((item) => item.userId))]);
+      setData(todos);
+    } catch (error) {
+      setMsg("Error");
+      console.log(msg);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCheck = async (todo) => {
+    try {
+      setLoading(true);
+
+      const updatedPost = {
+        ...todo,
+        completed: !todo.completed,
+      };
+
+      await api.put(`/todos/${todo.id}`, updatedPost);
+
+      
+    } catch (error) {
+      setMsg("Error");
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="container align-center ">
         <h1>Liste Des Todos</h1>
-        <p>15 todo(s)</p>
+        <p>{data.length} todo(s)</p>
         <hr />
         <SelectUser Users={usersList} />
 
@@ -48,6 +82,8 @@ function App() {
             title={d.title}
             completed={d.completed}
             number={index}
+            Delete={handleDelete}
+            update={handleCheck}
           />
         ))}
       </div>
