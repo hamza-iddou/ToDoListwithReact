@@ -1,22 +1,16 @@
 {
   "todos": [
     {
-      "id": "1",
-      "userId": "",
-      "title": "",
-      "completed": true
-    },
-    {
-      "userId": 1,
       "id": "2",
+      "userId": 1,
       "title": "Read a book",
       "completed": true
     },
     {
+      "userId": 2,
       "id": "3",
-      "userId": "",
-      "title": "",
-      "completed": true
+      "title": "Buy groceries",
+      "completed": false
     },
     {
       "userId": 2,
@@ -25,15 +19,33 @@
       "completed": true
     },
     {
-      "id": "7",
-      "userId": "",
-      "title": "",
+      "userId": 3,
+      "id": "5",
+      "title": "Finish project report",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": "6",
+      "title": "Go for a run",
       "completed": true
     },
     {
-      "id": "8",
       "userId": 4,
+      "id": "7",
+      "title": "Call mom",
+      "completed": false
+    },
+    {
+      "userId": 4,
+      "id": "8",
       "title": "Pay bills",
+      "completed": true
+    },
+    {
+      "userId": 5,
+      "id": "10",
+      "title": "Watch a movie",
       "completed": true
     }
   ]

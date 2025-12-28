@@ -8,7 +8,9 @@ const api = axios.create({ baseURL: "http://localhost:3001" });
 function App() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
+  const [rendredData, setRendredData] = useState([]);
   const [usersList, setUserList] = useState([]);
+  const [selectedUser, setselectedUser] = useState("-1");
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
@@ -18,7 +20,6 @@ function App() {
         const response = await api.get("/todos");
         const todos = response.data;
         setUserList([...new Set(todos.map((item) => item.userId))]);
-
         setData(todos);
       } catch {
         setMsg("Error");
@@ -28,8 +29,14 @@ function App() {
       }
     };
 
+    if (selectedUser === "-1") {
+      setRendredData(data);
+    } else {
+      setRendredData(data.filter((todo) => todo.userId == selectedUser));
+    }
+
     fetchTools();
-  }, [data]);
+  }, [selectedUser, data]);
 
   const handleDelete = async (id) => {
     try {
@@ -56,8 +63,6 @@ function App() {
       };
 
       await api.put(`/todos/${todo.id}`, updatedPost);
-
-      
     } catch (error) {
       setMsg("Error");
       console.log(error);
@@ -72,9 +77,9 @@ function App() {
         <h1>Liste Des Todos</h1>
         <p>{data.length} todo(s)</p>
         <hr />
-        <SelectUser Users={usersList} />
+        <SelectUser Users={usersList} onSelect={setselectedUser} />
 
-        {data.map((d, index) => (
+        {rendredData.map((d, index) => (
           <Task
             key={d.id}
             userId={d.userId}
