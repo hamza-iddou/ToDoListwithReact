@@ -3,9 +3,6 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const SelectUser = ({ onSelect, Users }) => {
-  
-  
-
   return (
     <>
       <p>
@@ -15,7 +12,6 @@ const SelectUser = ({ onSelect, Users }) => {
       <select
         className="form-select"
         aria-label="Default select example"
-        
         onChange={(e) => onSelect(e.target.value)}
       >
         <option value="-1" defaultValue>
